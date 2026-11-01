@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teioh Wada · Photography</title>
+  <meta name="description" content="Teioh Wada is a photographer based in Ventura County and Los Angeles, shooting graduation, portrait, pet, cosplay, landscape and street photography.">
+  <meta property="og:title" content="Teioh Wada · Photography">
+  <meta property="og:description" content="Graduation, portrait, pet and cosplay photography in Ventura County and Los Angeles.">
+  <meta name="theme-color" content="#97AAB0">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2397AAB0'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-size='26' letter-spacing='2' fill='%23fff'%3ETW%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400&family=Cormorant+Garamond:ital,wght@0,400;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Photo list written by optimize_photos.py -->
+  <script src="images/photos.js"></script>
+
+  <script>
+    // Any photo that's missing gets a neat placeholder instead of a broken-image icon.
+    function placeholderSvg(label) {
+      const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750"><rect width="600" height="750" fill="#EFECE6"/><rect x="25" y="25" width="550" height="700" fill="none" stroke="#97AAB0" stroke-width="1.5" stroke-dasharray="4 4"/><circle cx="300" cy="340" r="32" fill="#97AAB0" opacity=".4"/><path d="M220 460 280 390 330 440 380 370 430 460Z" fill="#97AAB0" opacity=".5"/><text x="300" y="520" text-anchor="middle" font-family="Georgia,serif" font-size="16" letter-spacing="3" fill="#5F6F74">${String(label).toUpperCase().replace(/[<&]/g, '')}</text></svg>`;
+      return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    }
+    document.addEventListener('error', e => {
+      const img = e.target;
+      if (img.tagName === 'IMG' && !img.dataset.ph) {
+        img.dataset.ph = '1';
+        img.src = placeholderSvg(img.alt || 'Photo');
+      }
+    }, true);
+  </script>
+
+  <style>
+    :root {
+      --side: #97AAB0;
+      --side-dark: #798E94;
+      --canvas: #FAF9F6;
+      --ink: #1D1F20;
+      --line: #D6D3D1;
+      --line-soft: #E7E5E4;
+      --muted: #78716C;
+      --body: #44403C;
+      --track: .18em;
+      --track-wide: .26em;
+      --bodoni: "Bodoni Moda", Didot, Georgia, serif;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.05);
+      --shadow-md: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+    html, body { margin: 0; }
+    body {
+      min-height: 100vh;
+      background: var(--canvas);
+      color: var(--ink);
+      font: 400 16px/1.5 var(--sans);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--side-dark); color: #fff; }
+    h1, h2, h3, p { margin: 0; font-weight: inherit; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; text-align: inherit; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; margin: 0; padding: 0; }
+    :focus-visible { outline: 2px solid var(--side-dark); outline-offset: 2px; }
+    ::-webkit-scrollbar { width: 7px; height: 7px; }
+    ::-webkit-scrollbar-track { background: #F1EFEA; }
+    ::-webkit-scrollbar-thumb { background: var(--side); }
+    .icon { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+
+    /* ---------- Phone / tablet header ---------- */
+    .mhead {
+      position: sticky; top: 0; z-index: 50;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 20px;
+      background: var(--side); color: #fff;
+      box-shadow: var(--shadow-md);
+    }
+    .brand {
+      font-family: var(--bodoni); font-weight: 500;
+      text-transform: uppercase; letter-spacing: var(--track);
+      font-size: 20px; line-height: 28px;
+    }
+    .menu-btn { padding: 8px; margin: -8px; }
+    .menu-btn svg { display: block; width: 24px; height: 24px; }
+    .mnav {
+      position: sticky; top: 60px; z-index: 49;
+      background: var(--side-dark); color: #fff;
+      padding: 12px 24px 20px;
+      border-bottom: 1px solid rgba(255,255,255,.2);
+      font-size: 12px; text-transform: uppercase; letter-spacing: var(--track);
+    }
+    .mnav a { display: block; padding: 10px 0; }
+    .mnav .ig { display: flex; align-items: center; gap: 8px; margin-top: 8px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.2); }
+
+    /* ---------- Layout ---------- */
+    .shell { display: flex; flex-direction: column; min-height: 100vh; }
+    .side { display: none; }
+    .canvas { flex: 1; min-width: 0; padding: 24px; }
+
+    @media (min-width: 640px) { .canvas { padding: 40px; } }
+    @media (min-width: 1024px) {
+      .mhead, .mnav { display: none !important; }
+      .shell { flex-direction: row; }
+      .side {
+        display: flex; flex-direction: column; justify-content: space-between;
+        position: sticky; top: 0; z-index: 40;
+        width: 288px; height: 100vh; flex-shrink: 0;
+        padding: 32px;
+        background: var(--side); color: #fff;
+        user-select: none;
+      }
+      .side .brand { font-size: 24px; line-height: 32px; }
+    }
+    @media (min-width: 1280px) {
+      .side { width: 320px; padding: 40px; }
+      .side .brand { font-size: 30px; line-height: 36px; }
+      .canvas { padding: 56px; }
+    }
+
+    .side nav { margin-top: 48px; }
+    @media (min-width: 1280px) { .side nav { margin-top: 64px; } }
+    .side nav li + li { margin-top: 16px; }
+    .navlink {
+      display: block; padding: 4px 0;
+      font-size: 12px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: var(--track);
+      color: rgba(255,255,255,.7);
+      transition: color .2s;
+    }
+    .navlink:hover, .navlink[aria-current] { color: #fff; }
+    .navlink[aria-current] { font-weight: 600; }
+    .side-foot { padding-top: 32px; border-top: 1px solid rgba(255,255,255,.25); }
+    .side-foot .ig {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 12px; text-transform: uppercase; letter-spacing: var(--track);
+      color: rgba(255,255,255,.85); transition: color .2s;
+    }
+    .side-foot .ig:hover { color: #fff; }
+    .side-foot .ig svg { transition: transform .2s; }
+    .side-foot .ig:hover svg { transform: scale(1.1); }
+    .copy {
+      margin-top: 16px;
+      font-size: 10px; line-height: 1.6;
+      text-transform: uppercase; letter-spacing: var(--track);
+      color: rgba(255,255,255,.6);
+    }
+
+    /* ---------- Page headings ---------- */
+    .phead {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+      gap: 12px 16px;
+      margin-bottom: 24px; padding-bottom: 12px;
+      border-bottom: 1px solid rgba(214,211,209,.8);
+    }
+    .phead-left { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+    .ptitle {
+      font-family: var(--bodoni); font-size: 20px; line-height: 28px;
+      text-transform: uppercase; letter-spacing: var(--track);
+    }
+    @media (min-width: 768px) { .ptitle { font-size: 24px; line-height: 32px; } }
+    .hint { font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--muted); }
+
+    /* ---------- Shared bits ---------- */
+    .card { background: #fff; border: 1px solid var(--line); box-shadow: var(--shadow-sm); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 12px;
+      background: var(--side); color: #fff;
+      font-size: 12px; text-transform: uppercase; letter-spacing: var(--track);
+      transition: background .2s;
+    }
+    .btn:hover { background: var(--side-dark); }
+    .btn-block { display: block; width: 100%; padding: 10px; text-align: center; font-weight: 500; }
+    .textbtn {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; text-transform: uppercase; letter-spacing: var(--track);
+      color: var(--side-dark);
+    }
+    .textbtn:hover { text-decoration: underline; }
+    .textbtn svg { width: 14px; height: 14px; fill: currentColor; }
+    .empty {
+      grid-column: 1 / -1;
+      padding: 48px 24px; text-align: center;
+      font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--muted);
+    }
+
+    /* ---------- Photo grids ---------- */
+    .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1280px) { .grid { gap: 28px; } }
+
+    .tile {
+      display: block; width: 100%;
+      background: #fff; border: 1px solid var(--line);
+      padding: 10px;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow .3s, transform .3s;
+    }
+    .tile:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
+    .frame { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: #F5F5F4; }
+    .frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .7s; }
+    .tile:hover .frame img { transform: scale(1.05); }
+    .banner {
+      position: absolute; left: 0; right: 0; bottom: 0;
+      padding: 10px 12px; text-align: center;
+      background: rgba(151,170,176,.94);
+      border-top: 1px solid rgba(255,255,255,.2);
+      color: #fff;
+      font-family: var(--bodoni); font-size: 12px; line-height: 16px; font-weight: 500;
+      text-transform: uppercase; letter-spacing: var(--track);
+    }
+    .cta {
+      padding-top: 8px; text-align: center;
+      font-size: 10px; text-transform: uppercase; letter-spacing: var(--track-wide);
+      color: var(--side-dark);
+    }
+    .tile:hover .cta { text-decoration: underline; }
+    .plates .tile { padding: 8px; }
+    @media (min-width: 640px) { .plates .tile { padding: 10px; } }
+    @media (hover: none) {
+      .tile:hover { transform: none; }
+      .tile:hover .frame img { transform: none; }
+    }
+
+    /* ---------- Videography ---------- */
+    .videos { display: grid; gap: 24px; }
+    @media (min-width: 768px) {
+      .videos { grid-template-columns: repeat(2, 1fr); }
+      .videos > .video:first-child { grid-column: 1 / -1; }
+    }
+    .video { padding: 16px; }
+    .screen { position: relative; aspect-ratio: 16 / 9; background: #1C1917; overflow: hidden; }
+    .screen img, .screen iframe, .screen video {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover;
+    }
+    .play {
+      position: absolute; inset: 0; width: 100%;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(41,37,36,.55); transition: background .2s;
+    }
+    .play:hover { background: rgba(41,37,36,.35); }
+    .play span {
+      width: 60px; height: 60px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid rgba(255,255,255,.9);
+      background: rgba(121,142,148,.85);
+      transition: transform .2s;
+    }
+    .play:hover span { transform: scale(1.1); }
+    .play svg { width: 24px; height: 24px; fill: #fff; margin-left: 4px; }
+    .vtitle { margin-top: 12px; font-family: var(--bodoni); font-size: 14px; text-transform: uppercase; }
+    .vsub { margin-top: 2px; font-family: var(--serif); font-style: italic; font-size: 14px; color: var(--muted); }
+
+    /* ---------- About ---------- */
+    .split { display: grid; gap: 32px; align-items: start; padding: 24px; }
+    @media (min-width: 768px) { .split { grid-template-columns: 5fr 7fr; padding: 40px; } }
+    .mat { width: 100%; padding: 12px; background: #FAFAF9; border: 1px solid var(--line); box-shadow: var(--shadow-sm); margin: 0 auto; }
+    .about-photo { max-width: 384px; }
+    .about-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; }
+    .prose { font-size: 14px; line-height: 1.7; color: var(--body); }
+    @media (min-width: 768px) { .prose { font-size: 15px; } }
+    .prose > * + * { margin-top: 16px; }
+    .quote { font-family: var(--bodoni); font-style: italic; font-size: 17px; line-height: 1.4; color: var(--ink); }
+    @media (min-width: 768px) { .quote { font-size: 19px; } }
+    .rule { width: 48px; height: 1px; background: var(--side); }
+
+    /* ---------- FAQ ---------- */
+    .faq { display: grid; gap: 16px; }
+    .faq details { padding: 20px; }
+    .faq summary {
+      display: flex; justify-content: space-between; gap: 16px;
+      cursor: pointer; list-style: none;
+      font-family: var(--bodoni); font-size: 14px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: .03em;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after { content: "+"; font-family: var(--sans); font-weight: 400; font-size: 18px; line-height: 18px; color: var(--side-dark); }
+    .faq details[open] summary::after { content: "\2013"; }
+    .faq details p { margin-top: 10px; font-family: var(--serif); font-size: 17px; line-height: 1.5; color: #57534E; }
+    .faq details p + p { margin-top: 8px; }
+    .price {
+      margin-top: 18px; padding-top: 16px;
+      border-top: 1px solid var(--line-soft);
+    }
+    .price:first-of-type { border-top: 0; padding-top: 4px; margin-top: 12px; }
+    .price-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+    .price h4 {
+      margin: 0; font-family: var(--bodoni); font-size: 13px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: var(--track); color: var(--ink);
+    }
+    .price .amount { font-family: var(--serif); font-size: 18px; font-style: italic; color: var(--side-dark); }
+    .price ul { margin-top: 6px; padding-left: 18px; list-style: disc; font-family: var(--serif); font-size: 17px; line-height: 1.5; color: #57534E; }
+    .price li + li { margin-top: 2px; }
+    .price li::marker { color: var(--side); }
+    .price .sub { margin-top: 10px; padding-left: 14px; border-left: 2px solid var(--line-soft); }
+    .price .sub + .sub { margin-top: 14px; }
+    .price h5 { margin: 0; font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--ink); }
+    .price .sub ul { margin-top: 2px; }
+
+    /* ---------- Connect ---------- */
+    .contact { padding: 24px; }
+    @media (min-width: 640px) { .contact { padding: 32px; } }
+    .contact-info > * + * { margin-top: 20px; }
+    .contact h3 { font-family: var(--bodoni); font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--track); }
+    .contact-info > p { font-family: var(--serif); font-size: 17px; line-height: 1.5; color: #57534E; }
+    .label { display: block; margin-bottom: 4px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--track); color: var(--side-dark); }
+    .mono { font-family: var(--mono); font-size: 13px; word-break: break-all; }
+    .mono:hover { text-decoration: underline; }
+    .contact-info .divider { padding-top: 16px; border-top: 1px solid var(--line-soft); }
+    .contact-photo { max-width: 512px; }
+    @media (min-width: 640px) { .contact-photo { padding: 16px; } }
+    .contact-photo img { width: 100%; height: auto; max-height: 75vh; object-fit: contain; margin: 0 auto; }
+
+    /* ---------- Lightbox ---------- */
+    .lb {
+      position: fixed; inset: 0; z-index: 60;
+      display: flex; flex-direction: column;
+      padding: 16px;
+      background: rgba(18,20,21,.96); color: #fff;
+      user-select: none;
+    }
+    @media (min-width: 640px) { .lb { padding: 24px; } }
+    .lb-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .lb-top { padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.15); }
+    .lb-bottom {
+      padding-top: 12px; border-top: 1px solid rgba(255,255,255,.15);
+      font-size: 12px; text-transform: uppercase; letter-spacing: var(--track);
+    }
+    .lb-tag { font-family: var(--bodoni); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: var(--track); color: var(--side); }
+    .lb-count { margin-left: 12px; font-family: var(--mono); font-size: 12px; color: rgba(255,255,255,.5); }
+    .lb-close { padding: 0 8px; font-size: 30px; line-height: 1; }
+    .lb-close:hover { color: var(--side); }
+    .lb-stage { flex: 1; min-height: 0; margin: 12px 0; display: flex; align-items: center; justify-content: center; overflow: hidden; touch-action: pan-y; }
+    .lb-mat {
+      display: flex; max-width: min(1024px, 100%); max-height: 100%;
+      padding: 10px; background: #fff;
+      border: 4px solid rgba(151,170,176,.4);
+      box-shadow: 0 25px 50px -12px rgba(0,0,0,.4);
+    }
+    @media (min-width: 640px) { .lb-mat { padding: 16px; } }
+    .lb-mat img { max-width: 100%; max-height: calc(100vh - 190px); max-height: calc(100dvh - 190px); object-fit: contain; }
+    .lb-nav { padding: 8px 16px; border: 1px solid rgba(255,255,255,.3); text-transform: uppercase; letter-spacing: var(--track); transition: color .2s, border-color .2s; }
+    .lb-nav:hover { color: var(--side); border-color: var(--side); }
+    .lb-help { display: none; font-size: 10px; color: rgba(255,255,255,.4); }
+    @media (min-width: 640px) { .lb-help { display: inline; } }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Phone / tablet header (hidden on desktop) -->
+  <header class="mhead">
+    <a href="#portfolios" class="brand">Teioh Wada</a>
+    <button id="menuBtn" class="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+      <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </header>
+  <nav id="mobileNav" class="mnav" hidden>
+    <a href="#portfolios">Portfolios</a>
+    <a href="#videography">Videography</a>
+    <a href="#about">About</a>
+    <a href="#faqs">FAQs</a>
+    <a href="#contact">Connect</a>
+    <a class="ig" href="https://www.instagram.com/teioh__/" target="_blank" rel="noopener noreferrer">
+      <svg class="icon" viewBox="0 0 24 24"><use href="#ig-icon"/></svg><span>@teioh__</span>
+    </a>
+  </nav>
+
+  <div class="shell">
+
+    <!-- Desktop sidebar -->
+    <aside class="side">
+      <div>
+        <a href="#portfolios"><h1 class="brand">Teioh Wada</h1></a>
+        <nav aria-label="Main">
+          <ul>
+            <li><a class="navlink" data-nav="portfolios" href="#portfolios">Portfolios</a></li>
+            <li><a class="navlink" data-nav="videography" href="#videography">Videography</a></li>
+            <li><a class="navlink" data-nav="about" href="#about">About</a></li>
+            <li><a class="navlink" data-nav="faqs" href="#faqs">FAQs</a></li>
+            <li><a class="navlink" data-nav="contact" href="#contact">Connect</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="side-foot">
+        <a class="ig" href="https://www.instagram.com/teioh__/" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24"><use href="#ig-icon"/></svg><span>@teioh__</span>
+        </a>
+        <p class="copy">&copy; <span id="year">2026</span> Teioh Wada<br>All rights reserved.</p>
+      </div>
+    </aside>
+
+    <main class="canvas">
+
+      <!-- PORTFOLIOS -->
+      <section id="view-portfolios" class="view">
+        <div class="phead">
+          <h2 class="ptitle">Portfolios</h2>
+          <span class="hint">Choose a collection</span>
+        </div>
+        <div id="hubGrid" class="grid"></div>
+      </section>
+
+      <!-- ONE COLLECTION -->
+      <section id="view-category" class="view" hidden>
+        <div class="phead">
+          <div class="phead-left">
+            <a href="#portfolios" class="btn">&larr; All portfolios</a>
+            <h2 id="catTitle" class="ptitle"></h2>
+          </div>
+          <button id="shuffleBtn" class="textbtn">
+            <svg viewBox="0 0 24 24"><path d="M10.59 9.17 5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"/></svg>
+            Reshuffle
+          </button>
+        </div>
+        <div id="plates" class="grid plates"></div>
+      </section>
+
+      <!-- VIDEOGRAPHY -->
+      <section id="view-videography" class="view" hidden>
+        <div class="phead"><h2 class="ptitle">Videography</h2></div>
+        <div id="videoList" class="videos"></div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="view-about" class="view" hidden>
+        <div class="phead"><h2 class="ptitle">About Me</h2></div>
+        <div class="card split">
+          <div class="mat about-photo">
+            <img src="images/thumbs/about.webp" alt="Teioh Wada" loading="lazy" decoding="async">
+          </div>
+          <div class="prose">
+            <p class="quote">"Photography is pretty simple stuff. You just react to what you see, and take many, many pictures."</p>
+            <div class="rule"></div>
+            <p>Hi, my name is Teioh and I'm a photographer based out of Ventura County and Los Angeles. I take all types of portrait photos ranging from animals and graduation shoots to intricate cosplay setups and candid human moments.</p>
+            <p>My journey started with animal photography, mainly taking photos of my own and my neighbors' pets. If you've ever tried to negotiate a professional sit-down portrait with a hyperactive golden retriever or a cat that actively resents your existence, you know that normal human portraiture is a walk in the park by comparison. That trial by fire taught me two invaluable life skills: lightning-fast shutter reflexes and supreme patience.</p>
+            <p>Turns out, humans aren't all that different from pets. Most people get a little tense in front of a giant lens until someone makes them laugh or hands them a snack. Whether we're celebrating years of hard work for your graduation, capturing an elaborate handcrafted cosplay build, or braving the Ventura Freeway gridlock just in time to catch that iconic Southern California sunset, my goal is pretty straightforward: make the entire session fun, keep it stress-free, and ensure you walk away looking effortlessly cool.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQS -->
+      <section id="view-faqs" class="view" hidden>
+        <div class="phead"><h2 class="ptitle">FAQs</h2></div>
+        <div class="faq">
+          <details class="card" open>
+            <summary>How do I book a session?</summary>
+            <p>Send me an email through the Connect page with the type of shoot you're after, your preferred date, and the location you have in mind. Graduation season fills up quickly, so reach out early if you're planning a grad shoot.</p>
+          </details>
+          <details class="card">
+            <summary>Where do you shoot?</summary>
+            <p>I'm based in Ventura County and Los Angeles and shoot throughout both. If you have a location in mind farther out, just ask.</p>
+            <p>Most of my graduation shoots are at USC, UCLA, and Moorpark College, but I'm happy to shoot at other locations too.</p>
+          </details>
+          <details class="card">
+            <summary>What should I wear?</summary>
+            <p>Wear something you feel comfortable and confident in. Solid colors usually photograph better than busy patterns or large logos, and bringing a second outfit is always welcome.</p>
+          </details>
+          <details class="card">
+            <summary>How much does a session cost?</summary>
+
+            <div class="price">
+              <div class="price-head"><h4>Graduation</h4><span class="amount">$300 &middot; 1.5 hours</span></div>
+              <ul>
+                <li>Per person</li>
+                <li>Up to 3 locations and one outfit change, free of charge</li>
+                <li>Bringing a friend? Two people together is $500</li>
+              </ul>
+            </div>
+
+            <div class="price">
+              <h4>Pets</h4>
+              <div class="sub">
+                <div class="price-head"><h5>Outdoors</h5><span class="amount">$200 &middot; 1 hour</span></div>
+                <ul>
+                  <li>Can be your own backyard or a park near you</li>
+                  <li>Up to 2 pets</li>
+                </ul>
+              </div>
+              <div class="sub">
+                <div class="price-head"><h5>Indoors (natural light)</h5><span class="amount">$200 &middot; 1 hour</span></div>
+                <ul>
+                  <li>Up to 2 pets</li>
+                </ul>
+              </div>
+              <div class="sub">
+                <div class="price-head"><h5>Indoors (backdrop &amp; lighting equipment)</h5><span class="amount">$300 &middot; 1 hour</span></div>
+                <ul>
+                  <li>Up to 2 solid-color backdrops</li>
+                  <li>Up to 2 pets</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="price">
+              <div class="price-head"><h4>Cosplay</h4><span class="amount">$300 &middot; 1.5 hours</span></div>
+            </div>
+
+            <div class="price">
+              <div class="price-head"><h4>Sports</h4><span class="amount">$200 &middot; 1 hour</span></div>
+              <ul>
+                <li>I'm looking to gain more experience in sports photography, including kids' sports, so I'm offering a discounted rate. If you're interested, reach out and we can talk it through.</li>
+              </ul>
+            </div>
+          </details>
+          <details class="card">
+            <summary>Why do you charge what you charge?</summary>
+            <p>Fair question! On paper it's an hour and a half of me running around with a camera, occasionally lying in the grass for the right angle. What you don't see is everything around it: the drive there and back (anyone who's sat on the 101 knows that can be its own adventure), and most importantly, the editing.</p>
+            <p>After every session I go through hundreds of shots to find the best ones, then edit each one by hand: color, lighting, skin, stray hairs, and the occasional stranger who wandered into the background. That part alone can take several hours, and it's the part I care about most, because I want you to end up with photos you genuinely love and can't wait to share. So you're not just paying for the 1.5 hours; you're paying for the hours after, when I'm hunched over my laptop making sure every photo does you justice.</p>
+          </details>
+          <!--
+            Questions worth adding later. Copy one of the <details> blocks above for each:
+              - How many photos will I get?
+              - How long until I get my photos, and how are they delivered?
+              - Do you charge for travel?
+              - What if I need to reschedule or the weather is bad?
+          -->
+        </div>
+      </section>
+
+      <!-- CONNECT -->
+      <section id="view-contact" class="view" hidden>
+        <div class="phead"><h2 class="ptitle">Connect</h2></div>
+        <div class="card split contact">
+          <div class="contact-info">
+            <h3>Business inquiries only</h3>
+            <p>Interested in working together? Send me an email about the type of photoshoot you're looking for and I'll respond as soon as I can!</p>
+            <div>
+              <span class="label">Email</span>
+              <a class="mono" href="mailto:TeiohsPhotography@gmail.com">TeiohsPhotography@gmail.com</a>
+            </div>
+            <div>
+              <span class="label">Instagram</span>
+              <a class="mono" href="https://www.instagram.com/teioh__/" target="_blank" rel="noopener noreferrer">@teioh__</a>
+            </div>
+            <div class="divider">
+              <a class="btn btn-block" href="mailto:TeiohsPhotography@gmail.com">Compose email &rarr;</a>
+            </div>
+          </div>
+          <div class="mat contact-photo">
+            <img src="images/full/connect.webp" alt="Photography by Teioh Wada" loading="lazy" decoding="async">
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- Photo viewer -->
+  <div id="lightbox" class="lb" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <div class="lb-bar lb-top">
+      <div><span id="lbTag" class="lb-tag"></span><span id="lbCount" class="lb-count"></span></div>
+      <button id="lbClose" class="lb-close" aria-label="Close">&times;</button>
+    </div>
+    <div id="lbStage" class="lb-stage">
+      <div class="lb-mat"><img id="lbImg" alt=""></div>
+    </div>
+    <div class="lb-bar lb-bottom">
+      <button class="lb-nav" data-step="-1">&larr; Previous</button>
+      <span class="lb-help">Arrow keys to browse &bull; Esc to close</span>
+      <button class="lb-nav" data-step="1">Next &rarr;</button>
+    </div>
+  </div>
+
+  <!-- Instagram icon, defined once and reused -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="ig-icon" viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.64-.07-4.85s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98 1.28.06 1.69.07 4.95.07s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.7 21.31.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.41-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></symbol>
+  </svg>
+
+  <script>
+    /* =====================================================================
+       EDIT HERE
+       ===================================================================== */
+
+    // Your collections, in the order they appear. To add one, add a line here
+    // and put its photos in your originals folder named like  key1.jpg, key2.jpg ...
+    // "cover" is optional: the photo name to use on the Portfolios page.
+    const CATEGORIES = [
+      { key: 'grad',      title: 'Grad photography' },
+      { key: 'portrait',  title: 'Portrait photography' },
+      { key: 'animal',    title: 'Animal photography' },
+      { key: 'cosplay',   title: 'Cosplay photography',   cover: 'cosplay4' },
+      { key: 'landscape', title: 'Landscape photography', cover: 'landscape20' },
+      { key: 'street',    title: 'Street photography',    cover: 'street4' },
+    ];
+
+    // Your videos. Leave empty to show "coming soon".
+    // YouTube: use the ID from the link (youtube.com/watch?v=THIS_PART).
+    // A file on your Pi: put it in a "videos" folder next to this page.
+    const VIDEOS = [
+      // { title: 'Highlight reel', subtitle: 'Direction & camera by Teioh Wada', youtube: 'dQw4w9WgXcQ' },
+      // { title: 'Cosplay shoot BTS', subtitle: 'Behind the scenes', file: 'videos/bts.mp4', poster: 'videos/bts.jpg' },
+    ];
+
+    /* ===================================================================== */
+
+    const PHOTOS = window.PHOTOS || {};
+    const THUMB = name => `images/thumbs/${name}.webp`;
+    const FULL  = name => `images/full/${name}.webp`;
+    const $ = id => document.getElementById(id);
+
+    $('year').textContent = new Date().getFullYear();
+
+    function shuffle(list) {
+      const a = [...list];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    // ---------- Portfolios page ----------
+    $('hubGrid').innerHTML = CATEGORIES.map((c, i) => {
+      const cover = c.cover || (PHOTOS[c.key] || [])[0] || `${c.key}1`;
+      return `<a class="tile" href="#portfolio/${c.key}">
+          <div class="frame">
+            <img src="${THUMB(cover)}" alt="${c.title}" ${i < 3 ? 'fetchpriority="high"' : 'loading="lazy"'} decoding="async">
+            <div class="banner">${c.title}</div>
+          </div>
+          <div class="cta">Open collection &rarr;</div>
+        </a>`;
+    }).join('');
+
+    // ---------- One collection ----------
+    let current = null;   // the open category
+    let order = [];       // its photos in shuffled order
+    let idx = 0;          // photo showing in the viewer
+
+    function renderPlates() {
+      $('plates').innerHTML = order.length
+        ? order.map((name, i) => `<button class="tile" data-i="${i}" aria-label="Open photo ${i + 1} of ${order.length}">
+              <div class="frame"><img src="${THUMB(name)}" alt="${current.title} ${i + 1}" loading="${i < 6 ? 'eager' : 'lazy'}" decoding="async"></div>
+            </button>`).join('')
+        : `<p class="empty">Photos coming soon.</p>`;
+    }
+    $('plates').addEventListener('click', e => {
+      const tile = e.target.closest('[data-i]');
+      if (tile) openViewer(+tile.dataset.i);
+    });
+    $('shuffleBtn').addEventListener('click', () => { order = shuffle(order); renderPlates(); });
+
+    // ---------- Videos ----------
+    const esc = s => String(s).replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+    $('videoList').innerHTML = VIDEOS.length
+      ? VIDEOS.map((v, i) => {
+          const still = v.youtube ? `https://i.ytimg.com/vi/${v.youtube}/hqdefault.jpg` : v.poster;
+          return `<article class="card video">
+              <div class="screen" data-v="${i}">
+                ${still ? `<img src="${esc(still)}" alt="" loading="lazy">` : ''}
+                <button class="play" aria-label="Play ${esc(v.title)}"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></button>
+              </div>
+              <h3 class="vtitle">${esc(v.title)}</h3>
+              ${v.subtitle ? `<p class="vsub">${esc(v.subtitle)}</p>` : ''}
+            </article>`;
+        }).join('')
+      : `<p class="card empty">Video library coming soon.</p>`;
+
+    // Videos only load when someone presses play, so they cost nothing until then.
+    $('videoList').addEventListener('click', e => {
+      const screen = e.target.closest('.screen');
+      if (!screen || screen.dataset.on) return;
+      const v = VIDEOS[screen.dataset.v];
+      screen.dataset.on = '1';
+      screen.innerHTML = v.youtube
+        ? `<iframe src="https://www.youtube-nocookie.com/embed/${esc(v.youtube)}?autoplay=1&rel=0" title="${esc(v.title)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`
+        : `<video src="${esc(v.file)}" controls autoplay playsinline></video>`;
+    });
+
+    // ---------- Page switching (each page has its own link, and Back works) ----------
+    const TITLES = { portfolios: 'Portfolios', videography: 'Videography', about: 'About', faqs: 'FAQs', contact: 'Connect' };
+
+    function show(view, navKey = view, title = TITLES[view]) {
+      document.querySelectorAll('.view').forEach(s => s.hidden = s.id !== `view-${view}`);
+      document.querySelectorAll('[data-nav]').forEach(a => {
+        if (a.dataset.nav === navKey) a.setAttribute('aria-current', 'page');
+        else a.removeAttribute('aria-current');
+      });
+      document.title = `${title} · Teioh Wada Photography`;
+      closeMenu();
+      window.scrollTo(0, 0);
+    }
+
+    function route() {
+      if (!$('lightbox').hidden) closeViewer(false);
+      const hash = decodeURIComponent(location.hash.slice(1));
+      if (hash.startsWith('portfolio/')) {
+        const cat = CATEGORIES.find(c => c.key === hash.split('/')[1]);
+        if (cat) {
+          current = cat;
+          order = shuffle(PHOTOS[cat.key] || []);
+          $('catTitle').textContent = cat.title;
+          renderPlates();
+          return show('category', 'portfolios', cat.title);
+        }
+      }
+      show(TITLES[hash] ? hash : 'portfolios');
+    }
+    window.addEventListener('hashchange', route);
+    route();
+
+    // ---------- Phone menu ----------
+    function closeMenu() { $('mobileNav').hidden = true; $('menuBtn').setAttribute('aria-expanded', 'false'); }
+    $('menuBtn').addEventListener('click', () => {
+      const open = $('mobileNav').hidden;
+      $('mobileNav').hidden = !open;
+      $('menuBtn').setAttribute('aria-expanded', String(open));
+    });
+
+    // ---------- Photo viewer ----------
+    const lb = $('lightbox'), lbImg = $('lbImg');
+
+    function openViewer(i) {
+      idx = i;
+      paintViewer();
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+      $('lbClose').focus();
+    }
+    function closeViewer(refocus = true) {
+      lb.hidden = true;
+      document.body.style.overflow = '';
+      if (refocus) document.querySelector(`#plates [data-i="${idx}"]`)?.focus();
+    }
+    function step(dir) {
+      idx = (idx + dir + order.length) % order.length;
+      paintViewer();
+    }
+    function paintViewer() {
+      const name = order[idx];
+      $('lbTag').textContent = current.title;
+      $('lbCount').textContent = `${idx + 1} / ${order.length}`;
+      lbImg.alt = `${current.title} ${idx + 1}`;
+      delete lbImg.dataset.ph;
+      // Show the small version instantly (already downloaded), then swap in the sharp one.
+      lbImg.src = THUMB(name);
+      const full = new Image();
+      full.onload = () => { if (order[idx] === name) lbImg.src = full.src; };
+      full.src = FULL(name);
+      // Get the neighbours ready so Next/Previous feel instant.
+      [1, -1].forEach(d => { new Image().src = FULL(order[(idx + d + order.length) % order.length]); });
+    }
+
+    $('lbClose').addEventListener('click', () => closeViewer());
+    lb.querySelectorAll('[data-step]').forEach(b => b.addEventListener('click', () => step(+b.dataset.step)));
+    $('lbStage').addEventListener('click', e => { if (e.target === e.currentTarget) closeViewer(); });
+
+    window.addEventListener('keydown', e => {
+      if (lb.hidden) return;
+      if (e.key === 'ArrowRight') step(1);
+      else if (e.key === 'ArrowLeft') step(-1);
+      else if (e.key === 'Escape') closeViewer();
+    });
+
+    // Swipe left/right on phones
+    let touchX = null;
+    $('lbStage').addEventListener('touchstart', e => { touchX = e.touches[0].clientX; }, { passive: true });
+    $('lbStage').addEventListener('touchend', e => {
+      if (touchX === null) return;
+      const dx = e.changedTouches[0].clientX - touchX;
+      if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
+      touchX = null;
+    });
+  </script>
+</body>
+</html>
